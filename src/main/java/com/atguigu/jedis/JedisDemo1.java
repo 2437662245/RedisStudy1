@@ -23,8 +23,11 @@ public class JedisDemo1 {
         //jedis.del("username");
 
         jedis.hset("myhash","addr","bj");
+        jedis.hset("myhash","phone","123");
         String hValue = jedis.hget("myhash", "addr");
+        String hValue2 = jedis.hget("myhash", "phone");
         System.out.println(hValue);
+        System.out.println(hValue2);
 
         Set<String> keys = jedis.keys("*");
         for (String key : keys) {
